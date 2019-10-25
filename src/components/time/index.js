@@ -1,6 +1,6 @@
 import 'date-fns';
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
+// import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
 import {
   MuiPickersUtilsProvider,
@@ -32,7 +32,7 @@ export default function Datepicker(props) {
 
   return (
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <Grid container justify="space-around">
+      {/* <Grid container justify="space-around"> */}
         <KeyboardDatePicker
           disableToolbar
           variant="inline"
@@ -47,7 +47,7 @@ export default function Datepicker(props) {
             'aria-label': 'change date',
           }}
         />
-      </Grid>
+      {/* </Grid> */}
     </MuiPickersUtilsProvider>
   );
 }
