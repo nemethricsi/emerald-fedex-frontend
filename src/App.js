@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import TabPanel from './components/Tab';
 import Navbar from './components/Navbar';
+import MyResponsivePie from './components/Pite';
 
 function App() {
   return (
