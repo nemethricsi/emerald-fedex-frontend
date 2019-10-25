@@ -8,7 +8,7 @@ import EditIcon from '@material-ui/icons/Edit';
 
 const useStyles = makeStyles(theme => ({
   stylePaper: {
-    width: 500,
+    width: '100%',
     height: 80,
     display: 'flex',
     alignItems: 'center',
@@ -16,14 +16,14 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 'auto',
     marginRight: 'auto',
     margin: 10,
-    paddingLeft: 10,
-    paddingRight: 10,
     background: 'white',
     '&:hover': {
-       background: '#DCDCDC',
+      background: '#DCDCDC',
+    },
   },
+  date: {
+    marginLeft: 10,
   },
- 
   deletebutton: {
     margin: theme.spacing(1),
     color: 'red'
@@ -33,19 +33,51 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const data = [{
-  id: 1,
-  date: '2019-10-25',
-  category: 'kaja',
-  description: 'hambi',
-  amount: 700
-}, {
-  id: 2,
-  date: '2019-10-22',
-  category: 'pia',
-  description: 'sör',
-  amount: 700
-}];
+const data =
+  [
+    {
+      id: 1,
+      date: '2019-10-25',
+      category: 'kaja',
+      description: 'hambi',
+      amount: 700
+    },
+    {
+      id: 2,
+      date: '2019-10-22',
+      category: 'pia',
+      description: 'sör',
+      amount: 700
+    },
+    {
+      id: 2,
+      date: '2019-10-22',
+      category: 'pia',
+      description: 'sör',
+      amount: 700
+    },
+    {
+      id: 2,
+      date: '2019-10-22',
+      category: 'pia',
+      description: 'sör',
+      amount: 700
+    },
+    {
+      id: 2,
+      date: '2019-10-22',
+      category: 'pia',
+      description: 'sör',
+      amount: 700
+    },
+    {
+      id: 2,
+      date: '2019-10-22',
+      category: 'pia',
+      description: 'sör',
+      amount: 700
+    },
+  ];
 
 export default function Kolteslistazo() {
   const classes = useStyles();
@@ -54,7 +86,7 @@ export default function Kolteslistazo() {
     <div className={classes.wholePaper}>
       {data.map(item => (
         <Paper className={classes.stylePaper} key={item.id} >
-          <Typography>
+          <Typography className={classes.date}>
             {item.date}
           </Typography>
           <Typography>
@@ -64,7 +96,7 @@ export default function Kolteslistazo() {
             {item.description}
           </Typography>
           <Typography>
-            {item.amount}
+            {item.amount} Ft
           </Typography>
           <Typography>
             <IconButton className={classes.editbutton} aria-label="delete" onClick={() => { console.log('edited') }} >

@@ -62,10 +62,10 @@ export default function SimpleTabs() {
           <Tab icon={<TimelineIcon />} label="Csík" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
-      <TabPanel value={value} index={0}>
+      <TabPanel style={{ height: '275px' }} value={value} index={0}>
         Pite Diagram helye
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel style={{ height: '275px' }} value={value} index={1}>
         Csík diagram helye
       </TabPanel>
     </div>
