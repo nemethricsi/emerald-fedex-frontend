@@ -6,6 +6,7 @@ import TransactionsHeader from './components/TransactionsHeader';
 import { Paper, Typography } from '@material-ui/core';
 import Kolteslistazo from './components/Kolteslista';
 
+
 function App() {
   return (
     <>
