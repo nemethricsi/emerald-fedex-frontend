@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
+import { connect } from 'react-redux';
 
 const useStyles = makeStyles(theme => ({
   stylePaper: {
@@ -33,54 +34,10 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const data =
-  [
-    {
-      id: 1,
-      date: '2019-10-25',
-      category: 'kaja',
-      description: 'hambi',
-      amount: 700
-    },
-    {
-      id: 2,
-      date: '2019-10-22',
-      category: 'pia',
-      description: 'sör',
-      amount: 700
-    },
-    {
-      id: 2,
-      date: '2019-10-22',
-      category: 'pia',
-      description: 'sör',
-      amount: 700
-    },
-    {
-      id: 2,
-      date: '2019-10-22',
-      category: 'pia',
-      description: 'sör',
-      amount: 700
-    },
-    {
-      id: 2,
-      date: '2019-10-22',
-      category: 'pia',
-      description: 'sör',
-      amount: 700
-    },
-    {
-      id: 2,
-      date: '2019-10-22',
-      category: 'pia',
-      description: 'sör',
-      amount: 700
-    },
-  ];
 
-export default function Kolteslistazo() {
+function Kolteslistazo(props) {
   const classes = useStyles();
+  const data = props.transactions;
 
   return (
     <div className={classes.wholePaper}>
@@ -113,3 +70,11 @@ export default function Kolteslistazo() {
     </div>
   )
 }
+
+const mapStateToProps = (state) => {
+  return {
+    transactions: state.transactions
+  };
+};
+
+export default connect(mapStateToProps, null)(Kolteslistazo);

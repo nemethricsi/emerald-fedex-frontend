@@ -5,9 +5,11 @@ import Navbar from './components/Navbar';
 import TransactionsHeader from './components/TransactionsHeader';
 import { Paper, Typography } from '@material-ui/core';
 import Kolteslistazo from './components/Kolteslista';
+import { connect } from 'react-redux';
 
+function App(props) {
+  props.loadTransactions();
 
-function App() {
   return (
     <>
       <Navbar />
@@ -34,4 +36,32 @@ function App() {
   );
 }
 
-export default App;
+function fetchTransactions() {
+  return function (dispatch) {
+    fetch('https://5d88cdb9feddff0014e15fd6.mockapi.io/transactions', {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then(resp => resp.json())
+      .then(data => {
+        dispatch({
+          type: 'SUCCESFULLY_LOADED_TRANSACTIONS',
+          payload: data
+        });
+      })
+      .catch((error) => {
+        dispatch({
+          type: 'UNSUCCESFULLY_LOADED_TRANSACTIONS',
+          payload: error
+        });
+      });
+  };
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadTransactions: () => dispatch(fetchTransactions()),
+  }
+}
+
+export default connect(null, mapDispatchToProps)(App);

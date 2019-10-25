@@ -7,14 +7,16 @@ const initialState = {
   endErrorHandling: false,
   beginText: 'Dínom-dánom kezdete',
   endText: 'Dorbézolás végezte',
+  transactions: [],
+  transactionsAreLoaded: false,
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SETBEGIN':
-        return Object.assign({}, state, {
-          selectedBeginDate: action.payload,
-        });
+      return Object.assign({}, state, {
+        selectedBeginDate: action.payload,
+      });
     case 'SETEND':
       return Object.assign({}, state, {
         selectedEndDate: action.payload
@@ -35,6 +37,16 @@ const reducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         endText: action.payload
       });
+    case 'SUCCESFULLY_LOADED_TRANSACTIONS':
+      return {
+        transactions: action.payload,
+        transactionsAreLoaded: true
+      };
+    case 'UNSUCCESFULLY_LOADED_TRANSACTIONS':
+      return {
+        error: action.payload,
+        isLotransactionsAreLoadedaded: true
+      };
     default:
   }
   return state;
