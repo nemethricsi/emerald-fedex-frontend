@@ -20,10 +20,10 @@ const useStyles = makeStyles(theme => ({
     paddingRight: 10,
     background: 'white',
     '&:hover': {
-       background: '#DCDCDC',
+      background: '#DCDCDC',
+    },
   },
-  },
- 
+
   deletebutton: {
     margin: theme.spacing(1),
     color: 'red'
