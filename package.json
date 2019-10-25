@@ -10,7 +10,8 @@
     "date-fns": "^2.6.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "react-table": "^6.10.3"
   },
   "scripts": {
     "start": "react-scripts start",
