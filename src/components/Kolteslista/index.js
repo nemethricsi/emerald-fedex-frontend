@@ -51,7 +51,7 @@ function Kolteslistazo(props) {
       {data.map(item => (
         <Paper className={classes.stylePaper} key={item.trans_id} >
           <Typography className={classes.date}>
-            {item.date}
+            {(item.date).slice(0, 10)}
           </Typography>
           <Typography>
             {item.cat_name}
