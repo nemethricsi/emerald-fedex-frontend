@@ -42,7 +42,7 @@ function Kolteslistazo(props) {
   return (
     <div className={classes.wholePaper}>
       {data.map(item => (
-        <Paper className={classes.stylePaper} key={item.id} >
+        <Paper className={classes.stylePaper} key={item.trans_id} >
           <Typography className={classes.date}>
             {item.date}
           </Typography>
