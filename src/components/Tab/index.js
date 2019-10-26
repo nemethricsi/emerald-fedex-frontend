@@ -326,7 +326,6 @@ function SimpleTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const koltesek = props.transactions;
-  console.log(koltesek);
 
   const data = koltesek.map(koltes => {
     return { id: koltes.cat_name, label: koltes.cat_name, value: koltes.amount };
