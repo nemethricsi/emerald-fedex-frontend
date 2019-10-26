@@ -8,7 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import PieChartIcon from '@material-ui/icons/PieChart';
 import TimelineIcon from '@material-ui/icons/Timeline';
-import { ResponsivePie } from '@nivo/pie';
+import PieChart from '../Pite';
+import { connect } from 'react-redux';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -22,7 +23,7 @@ function TabPanel(props) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      <Box p={3}>{children}</Box>
+      <Box p={1}>{children}</Box>
     </Typography>
   );
 }
@@ -47,9 +48,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SimpleTabs() {
+function SimpleTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const koltesek = props.transactions;
+  console.log(koltesek);
+
+  const data = koltesek.map(koltes => {
+    return { id: koltes.category, label: koltes.category, value: koltes.amount };
+  })
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -64,11 +71,23 @@ export default function SimpleTabs() {
         </Tabs>
       </AppBar>
       <TabPanel style={{ height: '275px' }} value={value} index={0}>
-        <ResponsivePie />
+        <div style={{ height: '250px' }}>
+          <PieChart data={data} />
+        </div>
       </TabPanel>
       <TabPanel style={{ height: '275px' }} value={value} index={1}>
-        Csík diagram helye
+        <div style={{ height: '250px' }}>
+          {/* <LineChart data={data} /> */}
+        </div>
       </TabPanel>
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    transactions: state.transactions
+  };
+}
+
+export default connect(mapStateToProps, null)(SimpleTabs);

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import TabPanel from './components/Tab';
+import SimpleTabs from './components/Tab';
 import Navbar from './components/Navbar';
 import TransactionsHeader from './components/TransactionsHeader';
 import { Paper, Typography } from '@material-ui/core';
@@ -25,7 +25,7 @@ function App(props) {
           </Paper>
         </div>
         <div className="diagram-card">
-          <TabPanel />
+          <SimpleTabs />
         </div>
         <div className="transactions-card">
           <TransactionsHeader />
