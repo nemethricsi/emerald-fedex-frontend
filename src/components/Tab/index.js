@@ -6,9 +6,9 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import PieChartIcon from '@material-ui/icons/PieChart';
 import TimelineIcon from '@material-ui/icons/Timeline';
 import PieChart from '../Pite';
+import DonutLargeIcon from '@material-ui/icons/DonutLarge';
 import LineChart from '../LineChart';
 import { connect } from 'react-redux';
 
@@ -340,7 +340,7 @@ function SimpleTabs(props) {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs variant="fullWidth" value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab icon={<PieChartIcon />} label="Pite" {...a11yProps(0)} />
+          <Tab icon={<DonutLargeIcon />} label="Fánk" {...a11yProps(0)} />
           <Tab icon={<TimelineIcon />} label="Csík" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
