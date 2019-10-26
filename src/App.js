@@ -12,7 +12,6 @@ import sumCosts from './utilities/sum/sum';
 
 function App(props) {
   props.loadTransactions();
-
   const costs = props.transactions.map(transaction => {
     return transaction.amount;
   })
@@ -50,7 +49,7 @@ function App(props) {
 
 function fetchTransactions() {
   return function (dispatch) {
-    fetch('https://5d88cdb9feddff0014e15fd6.mockapi.io/transactions', {
+    fetch('http://localhost:8080/transactions', {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     })

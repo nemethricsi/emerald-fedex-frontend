@@ -329,7 +329,7 @@ function SimpleTabs(props) {
   console.log(koltesek);
 
   const data = koltesek.map(koltes => {
-    return { id: koltes.category, label: koltes.category, value: koltes.amount };
+    return { id: koltes.cat_name, label: koltes.cat_name, value: koltes.amount };
   })
 
   const handleChange = (event, newValue) => {
