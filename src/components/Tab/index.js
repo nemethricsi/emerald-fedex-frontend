@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
 
 const datas = [
   {
-    "id": "japan",
+    "id": "SÖR",
     "color": "hsl(140, 70%, 50%)",
     "data": [
       {
@@ -105,7 +105,7 @@ const datas = [
     ]
   },
   {
-    "id": "france",
+    "id": "HITEL",
     "color": "hsl(8, 70%, 50%)",
     "data": [
       {
@@ -159,7 +159,7 @@ const datas = [
     ]
   },
   {
-    "id": "us",
+    "id": "ELEDEL",
     "color": "hsl(7, 70%, 50%)",
     "data": [
       {
@@ -212,114 +212,6 @@ const datas = [
       }
     ]
   },
-  {
-    "id": "germany",
-    "color": "hsl(172, 70%, 50%)",
-    "data": [
-      {
-        "x": "plane",
-        "y": 253
-      },
-      {
-        "x": "helicopter",
-        "y": 261
-      },
-      {
-        "x": "boat",
-        "y": 134
-      },
-      {
-        "x": "train",
-        "y": 155
-      },
-      {
-        "x": "subway",
-        "y": 15
-      },
-      {
-        "x": "bus",
-        "y": 164
-      },
-      {
-        "x": "car",
-        "y": 109
-      },
-      {
-        "x": "moto",
-        "y": 257
-      },
-      {
-        "x": "bicycle",
-        "y": 172
-      },
-      {
-        "x": "horse",
-        "y": 135
-      },
-      {
-        "x": "skateboard",
-        "y": 136
-      },
-      {
-        "x": "others",
-        "y": 69
-      }
-    ]
-  },
-  {
-    "id": "norway",
-    "color": "hsl(335, 70%, 50%)",
-    "data": [
-      {
-        "x": "plane",
-        "y": 44
-      },
-      {
-        "x": "helicopter",
-        "y": 147
-      },
-      {
-        "x": "boat",
-        "y": 109
-      },
-      {
-        "x": "train",
-        "y": 247
-      },
-      {
-        "x": "subway",
-        "y": 107
-      },
-      {
-        "x": "bus",
-        "y": 22
-      },
-      {
-        "x": "car",
-        "y": 201
-      },
-      {
-        "x": "moto",
-        "y": 150
-      },
-      {
-        "x": "bicycle",
-        "y": 118
-      },
-      {
-        "x": "horse",
-        "y": 82
-      },
-      {
-        "x": "skateboard",
-        "y": 15
-      },
-      {
-        "x": "others",
-        "y": 274
-      }
-    ]
-  }
 ];
 
 function SimpleTabs(props) {

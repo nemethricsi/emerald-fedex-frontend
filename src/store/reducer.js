@@ -9,6 +9,7 @@ const initialState = {
   endText: 'Dorbézolás végezte',
   transactions: [],
   transactionsAreLoaded: false,
+  newTransactionModalIsOpen: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -47,6 +48,10 @@ const reducer = (state = initialState, action) => {
         error: action.payload,
         isLotransactionsAreLoadedaded: true
       };
+    case 'HANDLENEWTRANSACTIONMODAL':
+      return Object.assign({}, state, {
+        newTransactionModalIsOpen: action.payload
+      });
     default:
   }
   return state;

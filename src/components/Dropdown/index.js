@@ -29,8 +29,8 @@ export default function Dropdown() {
     dolog: '',
   });
 
-  const inputLabel = React.useRef(null);
-  const [labelWidth, setLabelWidth] = React.useState(0);
+  // const inputLabel = React.useRef(null);
+  // const [labelWidth, setLabelWidth] = React.useState(0);
 
   const handleChange = event => {
     setValues(oldValues => ({
