@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
+import { connect } from 'react-redux';
 
 const useStyles = makeStyles(theme => ({
   stylePaper: {
@@ -33,64 +34,27 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const data =
-  [
-    {
-      id: 1,
-      date: '2019-10-25',
-      category: 'kaja',
-      description: 'hambi',
-      amount: 700
-    },
-    {
-      id: 2,
-      date: '2019-10-22',
-      category: 'pia',
-      description: 'sör',
-      amount: 700
-    },
-    {
-      id: 2,
-      date: '2019-10-22',
-      category: 'pia',
-      description: 'sör',
-      amount: 700
-    },
-    {
-      id: 2,
-      date: '2019-10-22',
-      category: 'pia',
-      description: 'sör',
-      amount: 700
-    },
-    {
-      id: 2,
-      date: '2019-10-22',
-      category: 'pia',
-      description: 'sör',
-      amount: 700
-    },
-    {
-      id: 2,
-      date: '2019-10-22',
-      category: 'pia',
-      description: 'sör',
-      amount: 700
-    },
-  ];
+// const handleDelete = (event, id) => {
+//   fetch(`http://localhost:8080/transactions/`, {
+//     method: 'DELETE',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify({ id: 1 }),
+//   })
+// }
 
-export default function Kolteslistazo() {
+function Kolteslistazo(props) {
   const classes = useStyles();
+  const data = props.transactions;
 
   return (
     <div className={classes.wholePaper}>
       {data.map(item => (
-        <Paper className={classes.stylePaper} key={item.id} >
+        <Paper className={classes.stylePaper} key={item.trans_id} >
           <Typography className={classes.date}>
             {item.date}
           </Typography>
           <Typography>
-            {item.category}
+            {item.cat_name}
           </Typography>
           <Typography>
             {item.description}
@@ -104,7 +68,7 @@ export default function Kolteslistazo() {
             </IconButton>
           </Typography>
           <Typography >
-            <IconButton className={classes.deletebutton} aria-label="delete" onClick={() => { console.log('deleted') }}>
+            <IconButton className={classes.deletebutton} aria-label="delete">
               <DeleteIcon />
             </IconButton>
           </Typography>
@@ -113,3 +77,11 @@ export default function Kolteslistazo() {
     </div>
   )
 }
+
+const mapStateToProps = (state) => {
+  return {
+    transactions: state.transactions
+  };
+};
+
+export default connect(mapStateToProps, null)(Kolteslistazo);
