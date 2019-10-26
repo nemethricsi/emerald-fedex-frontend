@@ -4,16 +4,16 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(theme => ({
-  gomb: {
-    marginTop: '100px',
-  },
-}));
+// const useStyles = makeStyles(theme => ({
+//   gomb: {
+//     marginTop: '100px',
+//   },
+// }));
 
 export default function Modal(props) {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
     <div>

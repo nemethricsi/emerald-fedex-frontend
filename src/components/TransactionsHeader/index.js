@@ -2,15 +2,12 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
 import Dropdown from '../Dropdown';
 import Toolbar from '@material-ui/core/Toolbar';
-import Navbar from '../Navbar';
+import Transactions from '../transactionManipulation';
+import { connect } from 'react-redux';
+
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -31,18 +28,12 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function TransactionsHeader() {
+function TransactionsHeader(props) {
   const classes = useStyles();
-  const [values, setValues] = React.useState({
-    category: ''
-  });
 
-  const handleChange = event => {
-    setValues(oldValues => ({
-      ...oldValues,
-      [event.target.name]: event.target.value,
-    }));
-  };
+  const openModal = () => {
+    props.handleModal(true);
+  }
 
   return (
     <div className={classes.grow}>
@@ -52,9 +43,18 @@ export default function TransactionsHeader() {
             Rongyrázások
         </Typography>
           <Dropdown />
-          <Button variant="contained" >Új Pénzszórás</Button>
+          <Button variant="contained" onClick={openModal}>Új Pénzszórás</Button>
+          <Transactions />
         </Toolbar>
       </AppBar>
     </div>
   );
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleModal: (payload) => dispatch({ type: 'HANDLENEWTRANSACTIONMODAL', payload }),
+  }
+}
+
+export default connect(null, mapDispatchToProps)(TransactionsHeader);
