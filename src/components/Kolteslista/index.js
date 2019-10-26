@@ -34,6 +34,12 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+const handleDelete = (event, id) => {
+  console.log(event.target);
+  fetch(`https://5d88cdb9feddff0014e15fd6.mockapi.io/transactions/${id}`, {
+    method: 'DELETE',
+  })
+}
 
 function Kolteslistazo(props) {
   const classes = useStyles();
@@ -61,7 +67,7 @@ function Kolteslistazo(props) {
             </IconButton>
           </Typography>
           <Typography >
-            <IconButton className={classes.deletebutton} aria-label="delete" onClick={() => { console.log('deleted') }}>
+            <IconButton className={classes.deletebutton} aria-label="delete" onClick={handleDelete}>
               <DeleteIcon />
             </IconButton>
           </Typography>
